@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 다운로드</title>
+    <script>
+        function downloadFile() {
+            const filename = 'yourFolderName/d18c635f-324e-4260-947d-b2aae30abb9c이력서_강의.pdf';
+            const url = `http://localhost:8080/multipart-files?originalFilename=${filename}`;
+            window.location.href = url; // 새 창에서 다운로드 요청
+        }
+    </script>
+</head>
+<body>
+<h1>파일 다운로드 버튼</h1>
+<button onclick="downloadFile()">다운로드</button>
+</body>
+</html>
