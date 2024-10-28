@@ -1,13 +1,12 @@
 package com.ll.s3test.controller;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -69,5 +68,15 @@ public class FileUploadController {
             map.put(file.getOriginalFilename(), url);
         }
         return map;
+    }
+
+    @DeleteMapping("/multipart-files")
+    public String uploadMultipleFiles(@RequestParam String deleteFileName){
+        try {
+            amazonS3Client.deleteObject(bucket, deleteFileName);
+            return "삭제 성공";
+        } catch (AmazonServiceException e) {
+            return "삭제 실패: " + e.getMessage();
+        }
     }
 }
