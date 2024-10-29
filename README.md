@@ -8,6 +8,7 @@
 - 키(Key) : 객체를 고유하게 식별하는 식별자
   - 각 객체는 버킷 내에서 고유한 키를 가짐
 ![](https://velog.velcdn.com/images/puar12/post/e7b13f6c-447d-4b08-b54a-ca3755f5f513/image.png)
+
 [출처 - [AWS] Amazon S3란? (특징, 용어, OneFS 비교, NAS, 사용 사례)](https://yuna-ninano.tistory.com/m/entry/AWS-Amazon-S3%EB%9E%80-%ED%8A%B9%EC%A7%95-%EC%9A%A9%EC%96%B4-OneFS-%EB%B9%84%EA%B5%90-NAS-%EC%82%AC%EC%9A%A9-%EC%82%AC%EB%A1%80)
 
 ### AWS 전체 네트워크 구성
